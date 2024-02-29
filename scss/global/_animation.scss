@@ -1,0 +1,181 @@
+@use "../global/keyframe" as *;
+@use "../global/mixin" as *;
+
+// フェードイン
+.js-fadein.active {
+    // デフォルト
+    &.about__ttl,
+    &.about__column {
+        @include animation(
+            $name: fadein,
+            $duration: 1.5s,
+            $delay: 0.25s
+        );
+    }
+}
+.js-fadein15.active {
+    &:is(span)::after {
+        // アンカバー
+        @include animation(
+            $name: uncover-line,
+            $duration: 1.5s,
+            $delay: 1.25s
+        );
+    }
+    &.skills__ttl,
+    &.skills__column-1,
+    &.skills__column-2,
+    &.works__ttl,
+    &.works__cnt {
+            @include animation(
+                $name: fadein,
+                $duration: 1.5s,
+                $delay: 0.25s
+            );
+    }
+    &.skills__cnt {
+        @include animation(
+            $name: fadein,
+            $duration: 0.75s,
+            $delay: 0.25s
+        );
+    }
+}
+
+// バウンド
+.js-txt-bound.active {
+    & span {
+        @include animation(
+            $name: bound,
+            $duration: 0.25s
+        );
+    }
+}
+.js-ic-bound.active {
+    &::before {
+        @include animation(
+            $name: bound2,
+            $duration: 0.1s,
+            $delay: 1.5s
+        );
+        @include mq(bp) {
+            @include animation(
+                $name: bound3,
+                $duration: 0.1s,
+                $delay: 1.5s
+            );
+        }
+    }
+}
+
+// 回転
+.js-txt-rotateY.active {
+    & span {
+        @include animation(
+            $name: rotateY,
+            $duration: 0.2s
+        );
+    }
+}
+
+// アンカバー
+.js-ic-uncover.active {
+    &:is(span)::after {
+        @include animation(
+            $name: uncover-ic,
+            $duration: 1.5s,
+            $delay: 1.25s
+        );
+    }
+}
+.js-ly-uncover.active {
+    &.top__overlay {
+        @include animation(
+            $name: vanish,
+            $duration: 4s
+        );
+    }
+}
+
+// 伸縮
+.js-extend.active {
+    &.top__lbl-back::before {
+        @include animation(
+            $name: extend,
+            $duration: 1.5s,
+        );
+    }
+}
+
+// 拡大
+.js-expand.active {
+    &.top__kv {
+        @include animation(
+            $name: expand,
+            $duration: 3s
+        );
+    }
+}
+
+// スキルのラベルアニメ
+.active.js-lbl-anim {
+    &-ph1::after {
+        @include animation(
+            $name: uncover-lbl,
+            $duration: 0.75s
+        );
+    }
+    &-ph2 {
+        &:is(ul)::before {
+            @include animation(
+                $name: extend-lblLine,
+                $duration: 0.375s,
+                $delay: 0.375s
+            );
+        }
+        & .skills__label::after {
+            @include animation(
+                $name: uncover-lbl,
+                $duration: 0.75s,
+                $delay: 0.75s
+            );
+        }
+    }
+}
+
+// トグルアニメーション
+.js-toggle.active {
+    &.top__lbl-front {
+        @include animation(
+            $name: toggle3,
+            $duration: 0.75s,
+            $delay: 1.75s
+        );
+        &::before {
+            @include animation(
+                $name: toggle1,
+                $duration: 0.75s,
+                $delay: 1.75s
+            );
+        }
+        &::after {
+            @include animation(
+                $name: toggle2,
+                $duration: 0.75s,
+                $delay: 1.75s
+            );
+        }
+    }
+}
+
+// スクロールダウン
+.top__arrows.js-arrow.active {
+    & span {
+        @include animation(
+            $name: scroll-down,
+            $duration: 2.5s,
+            $iteration-count: infinite
+        );
+    }
+
+}

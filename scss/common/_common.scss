@@ -1,0 +1,12 @@
+@use '../global/' as *;
+
+.body {
+    width: 100%;
+    height: 100%;
+    padding-top: 155px;
+    font-family: $txt-ff-mukta;
+    background-color: $color-body;
+    @include mq(bp) {
+        padding-top: min(25vw, 125px);
+    }
+}

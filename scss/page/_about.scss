@@ -1,0 +1,185 @@
+@use '../global/' as *;
+
+.about {
+    margin-bottom: 8vw;
+    padding-top: 8vw;
+    &__ttl {
+        font-family: $txt-ff-fredoka;
+        font-size: $txt-fs-xl;
+        margin-bottom: 15vw;
+        font-weight: 600;
+        display: inline-block;
+        border: 1px solid #000;
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+        @include mq(bp) {
+            margin-bottom: 20vw; //
+            font-size: $txt-fs-l;
+        }
+    }
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 12vw;
+        opacity: 0;
+        transform: translateY(20px);
+        &-1 {
+            display: flex;
+            justify-content: flex-start;
+            gap: calc(5vw + 215.28px - 148px ); // selling の幅見て調整している
+            @include mq(bp) {
+                flex-direction: column;
+                gap: calc(3vw + 0.5vw);
+            }
+        }
+        &-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 6vw;
+        }
+        &-3 {
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            @include mq(bp) {
+                justify-content: flex-start;
+            }
+        }
+        &-4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 25px;
+        }
+    }
+    &__img {
+        width: clamp(90px, 11vw, 100px);
+        & img {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    &__name {
+        & p {
+            font-weight: 200;
+            letter-spacing: 0.075em;
+            font-size: $txt-fs;
+            border-bottom: 1px solid $color-main;
+            display: inline-block;
+            font-size: $txt-fs-l;
+            font-weight: 900;
+            border-bottom: 1px solid #000;
+            @include mq(bp) {
+                font-size: $txt-fs-l-mq;
+            }
+        }
+    }
+    &__intrdcton {
+        & p {
+            letter-spacing: .05em;
+            line-height: 1.6;
+            font-size: $txt-fs-s;
+        }
+    }
+    &__selling {
+        display: flex;
+        gap: 5vw;
+        @include mq(bp) {
+            flex-direction: column;
+            gap: 3vw;
+        }
+        & span {
+            font-size: $txt-fs-l;
+            font-family: $txt-ff-fredoka;
+            font-weight: 600;
+            display: inline-block;
+            @include mq(bp) {
+                font-size: $txt-fs;
+            }
+            &.padr2em {
+                padding-right: 2em;
+            }
+        }
+        & p {
+            font-size: $txt-fs-s;
+            font-family: $txt-ff-fredoka;
+            padding-left: 1.5rem;
+        }
+        &-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            & span:has(.js-txt-bound) {
+                & span {
+                    @for $i from 1 through 5 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: 0.25s * ($i - 1) * 0.8;
+                        }
+                    }
+                }
+            }
+            & span:has(.js-txt-rotateY) {
+                & span {
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: 0.2s * $i * 1.75;
+                        }
+                    }
+                }
+            }
+            & span.js-ic-bound {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    display: inline-block;
+                    top: -1.25em;
+                    right: 50%;
+                    background: url('../../src/assets/img/emphasis.svg') no-repeat;
+                    width: 31px;
+                    height: 100%;
+                    opacity: 0;
+                    @include mq(bp) {
+                        top: -1.5em;
+                        right: -10%;
+                    }
+                }
+            }
+            & span.js-ic-uncover {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    display: inline-block;
+                    top: -1em;
+                    right: -58%;
+                    background: url('../../src/assets/img/polyline.svg') no-repeat;
+                    width: 64px;
+                    height: 41px;
+                    stroke-dasharray: 500;
+                    stroke-dashoffset: 2000;
+                    @include mq(bp) {
+                        top: -1.25em;
+                        right: -60%;
+                        background: url('../../src/assets/img/polyline-s.svg') no-repeat;
+                        width: 55px;
+                        height: 35px;                    
+                    }
+                }
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 85px;
+                    height: 68px;
+                    background: $color-body;
+                    position: absolute;
+                    top: -160%;
+                    right: -63%;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,154 @@
+@use '../global/' as *;
+
+.skills {
+    --line-hor: 50px;
+    margin-bottom: 16vw;
+    &__ttl {
+        font-size: $txt-fs-l;
+        font-family: $txt-ff-fredoka;
+        font-weight: 600;
+        margin-bottom: calc(5vw - 1vw);
+        opacity: 0;
+        transform: translateY(20px);
+        @include mq(bp) {
+            font-size: $txt-fs;
+            margin-bottom: calc(2.5vw * 2.5);
+        }
+    }
+    &__column {
+        display: flex;
+        gap: 10vw;
+        align-items: flex-start;
+        position: relative;
+        flex-direction: column;
+        &-1,
+        &-2 {
+            display: flex;
+            gap: 3vw;
+            width: 100%;
+            justify-content: flex-end;
+            transform: translateY(20px);
+            opacity: 0;
+            @include mq(bp) {
+            flex-direction: column;
+            }
+        }
+    }
+    &__icatch {
+        width: 70%;
+        background: $color-base;
+        @include mq(bp) {
+            width: 100%;
+        }
+    }
+    &__cnt {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex-direction: column;
+        padding: 1.5rem 0rem 5rem 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    &__label {  /* ラベル と ラベル左に伸びる水平ラインの設定 */
+        display: inline-block;
+        line-height: 2.1;
+        position: relative;
+        min-width: 83px;
+        text-align: center;
+        margin-left: var(--line-hor);
+        font-size: $txt-fs-s;
+        background: #ffd770;
+        border-radius: 20px;
+        border: 2px solid #000;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: calc(var(--line-hor) * -1);
+            content: '';
+            display: inline-block;
+            width: var(--line-hor);
+            height: 2px;
+            background-color: $color-main;
+        }
+        &::after {
+            content: '';
+            display: inline-block;
+            width: calc(83px + 50px);
+            height: calc(2.1em + 8px);
+            position: absolute;
+            background: $color-base;
+            top: -4px;
+            left: -50px;
+        }
+    }
+    &__item {
+        & p {
+            font-size: $txt-fs-s;
+            color: #ff1f1f;
+            line-height: 1.5;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
+    }
+    &__detail {
+        font-size: $txt-fs-s;
+        line-height: 1.5;
+        opacity: 0.625;
+    }
+    &__category {
+        line-height: 1.5;
+        position: relative;
+        font-size: $txt-fs-l-mq;
+        background-color: $color-main;
+        color: $color-base;
+        padding: 0.5em 1em;
+        font-family: $txt-ff-fredoka;
+        @include mq(bp) {
+            font-size: unset;
+        }
+    }
+    &__tree {
+        /* tree 共通設定 */
+        border: 1px solid #000;
+        & ul {
+            position: relative;
+            margin-right: 2rem;
+            &::before {
+                position: absolute;
+                top: -2px;
+                left: 0;
+                content: '';
+                display: inline-block;
+                width: 2px;
+                background-color: $color-main;
+            }
+        }
+        & li:has(.skills__label) { /* ブランチ同士のスペース設定 */
+            margin-bottom: 1rem;
+        }
+    }
+    /* 階層単位の設定。インデント、ラベルの垂直線など。 */
+    &__layer1 { 
+        position: relative;
+        &.m--front::before {
+            height: calc(100% + 2px);
+        }
+        &.m--back::before {
+            height: calc(100% + 2px);
+        }
+        & > li {
+            &:first-child {
+                padding-top: 5rem;
+            }
+        }
+    }
+    &__layer2 {
+        margin-left: calc((var(--line-hor) * 1.8));
+        padding-top: 0.5rem;
+        &:is(ul)::before {
+            // height: 71.5%; .js-lbl-anim-ph2 のアニメーションで左の高さにする
+            height: 0%;
+        }
+    }
+}

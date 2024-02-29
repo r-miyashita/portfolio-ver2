@@ -1,0 +1,109 @@
+@use '../global/' as *;
+
+.works {
+    margin-bottom: 22vw;
+    &__ttl {
+        font-family: $txt-ff-fredoka;
+        font-size: $txt-fs-xl;
+        margin-bottom: 10vw;
+        font-weight: 600;
+        display: inline-block;
+        border: 1px solid #000;
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        transform: translateY(20px);
+        opacity: 0;
+        @include mq(bp) {
+            margin-bottom: 15vw;
+            font-size: $txt-fs-l;
+        }
+    }
+    &__cnt {
+        display: flex;
+        border-bottom: 0.5px solid $color-main;
+        width: 65%;
+        gap: 2vw;
+        padding: 3rem;
+        flex-direction: column;
+        margin: 0 5% 10vw auto;
+        border: 3px solid #000;
+        border-radius: 0px;
+        background: #e5ebf0;
+        box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.75);
+        transform: translateY(20px);
+        opacity: 0;
+        @include mq(bp) {
+            width: 100%;
+            flex-direction: column;
+            margin: 0 0 12vw auto;
+        }
+        &:hover {
+            background: #dad6f5;
+        }
+    }
+    &__video {
+        width: 25vw;
+        display: inline-block;
+        @include mq(bp) {
+            width: clamp(250px,50vw,540px);
+        }
+        & source {
+            width: 100%;
+        }
+    }
+    &__column {
+        &-1 {
+            display: flex;
+            gap: 1rem;
+            align-items: baseline;
+        }
+        &-2 {
+            display: flex;
+            gap: 3vw;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        &-4 {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            width: 100%;
+        }
+        &-6 {
+            display: flex;
+            gap: 3vw;
+            border-bottom: 0.5px solid #b6b6b6;
+            padding-bottom: 1rem;
+            @include mq(bp) {
+                gap: 1.5vw;
+                flex-direction: column;
+            }
+        }
+    }
+    &__name {
+        font-size: $txt-fs;
+        font-weight: 600;
+        font-family: $txt-ff-fredoka;
+    }
+    &__date,
+    &__func,
+    &__frmwk,
+    &__comment {
+        font-size: $txt-fs-s;
+        font-weight: 100;
+    }
+    &__func {
+        font-size: 0.625rem;
+    }
+    &__label {
+        display: inline-block;
+        font-size: calc($txt-fs-s - 0.125rem);
+        padding: 0.375em 0.75em;
+        border: 1.5px solid #000;
+        font-weight: bolder;
+        margin-bottom: 0.75rem;
+        min-width: 100px;
+        text-align: center;
+        background: $color-base;
+    }
+}

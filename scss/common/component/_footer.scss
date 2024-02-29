@@ -1,0 +1,61 @@
+@use '../../global/' as *;
+.footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $color-main;
+    flex-direction: column;
+    padding: 2vw;
+    &__inner {
+        display: flex;
+        width: clamp(330px, 70vw, 1000px);
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+    &__logo {
+        cursor: pointer;
+        font-family: $ttl-ff;
+        font-weight: $ttl-fw;
+        font-size: $ttl-fs;
+        transition: opacity 0.3s;
+        & a {
+            display: block;
+        }
+        @include mq(bp) {
+            font-size: clamp(calc($ttl-fs * 0.75),6vw, $ttl-fs);
+        }
+    }
+    &__menu {
+        display: flex;
+        gap: 1rem;
+        &-item {
+            cursor: pointer;
+            display: block;
+            padding: .375em;
+            font-family: $txt-ff-fredoka;
+            font-weight: $txt-fw;
+            font-size: $txt-fs-m;
+            opacity: 0.5;
+            &:hover {
+                color: #ff1f1f;
+            }
+        }
+    }
+    &__sns-item {
+        cursor: pointer;
+        padding-inline: 0.5em;
+        opacity: 0.5;
+        display: inline-block;
+        transform: scale(1.2);
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__copy {
+        margin-left: auto;
+        opacity: 0.5;
+        padding: 0.25em 0.5em;
+        background: #000;
+        color: #fff;
+    }
+}
