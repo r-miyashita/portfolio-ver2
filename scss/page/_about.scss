@@ -137,7 +137,7 @@
                     display: inline-block;
                     top: -1.25em;
                     right: 50%;
-                    background: url('../../src/assets/img/emphasis.svg') no-repeat;
+                    background: url(@/assets/img/emphasis.svg) no-repeat;
                     width: 31px;
                     height: 100%;
                     opacity: 0;
@@ -155,7 +155,7 @@
                     display: inline-block;
                     top: -1em;
                     right: -58%;
-                    background: url('../../src/assets/img/polyline.svg') no-repeat;
+                    background: url(@/assets/img/polyline.svg) no-repeat;
                     width: 64px;
                     height: 41px;
                     stroke-dasharray: 500;
@@ -163,7 +163,7 @@
                     @include mq(bp) {
                         top: -1.25em;
                         right: -60%;
-                        background: url('../../src/assets/img/polyline-s.svg') no-repeat;
+                        background: url(@/assets/img/polyline-s.svg) no-repeat;
                         width: 55px;
                         height: 35px;                    
                     }
