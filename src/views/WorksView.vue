@@ -110,6 +110,44 @@
                     </div>
                 </div>
             </div>
+            <div class="works__cnt js-fadein15">
+                <div class="works__column-1">
+                    <span class="works__name">API Test</span>
+                    <span class="works__date">2024.03</span>
+                </div>
+                <div class="works__column-2">
+                    <div class="works__column-3">
+                        <video class="works__video js-play-once" muted controls playsinline>
+                            <source  src="@/assets/mv/api-test.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="works__column-4">
+                        <div class="works__column-6">
+                            <div class="works__column-7">
+                                <span class="works__label">機能</span>
+                                <ul class="works__func">
+                                    <li>検索機能( Laravel )</li>
+                                    <li>ソート機能( Vue )</li>
+                                    <li>CRUD機能( Vue-Laravel )</li>
+                                </ul>
+                            </div>
+                            <div class="works__column-8">
+                                <span class="works__label">フレームワーク</span>
+                                <ul class="works__frmwk">
+                                    <li>Vue.js3( Typescript )</li>
+                                    <li>Laravel( Ver6 )</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="works__column-5">
+                            <p class="works__comment">
+                                サーバーサイドとのAPI連携学習のため作成。「 axios 」を利用してVue側からHTTPリクエストを送信しています。Laravel側はリクエスト処理用のルーティング・モデル・コントローラ作成を行いました。
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
