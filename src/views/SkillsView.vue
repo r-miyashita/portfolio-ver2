@@ -77,6 +77,20 @@
                                 </div>
                             </li>
 
+                            <li><span class="skills__label js-lbl-anim-ph1">JavaScript</span></li>
+                            <li>
+                                <div class="skills__cnt js-fadein15">
+                                    <ul class="skills__list">
+                                        <li class="skills__item"><p>ー  フレームワーク開発( Express )</p></li>
+                                        <li class="skills__item"><p>ー  Vue3連携( API作成 )</p></li>
+                                    </ul>
+                                    <p class="skills__detail">
+                                        サーバーサイドの知識習得および言語自体への理解を深めることを目的に利用しています。
+                                    </p>
+                                </div>
+                            </li>
+                            
+
                             <li><span class="skills__label js-lbl-anim-ph1">SQL</span></li>
                             <li>
                                 <div class="skills__cnt js-fadein15">
